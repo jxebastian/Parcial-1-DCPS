@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import {set} from '@ember/object';
 
 export default Component.extend({
   didInsertElement(){
@@ -37,9 +38,12 @@ export default Component.extend({
       this._super(...arguments);
       //const lista = this.modelFor('index').lista;
       const item = this.get('item');
-      //this.set('', true)
-      item.hecho = true;
-      console.log(item.hecho);
+      if (item.hecho) {
+        set(item, 'hecho', false);
+      }else{
+        set(item, 'hecho', true);
+      }
+
     }
   }
 });
