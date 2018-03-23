@@ -1,0 +1,9 @@
+<div class="fondo">
+  {{#link-to 'item'}}
+    {{item.nombre}}
+  {{/link-to}}
+  <label id="leyenda">{{if item.hecho "hecho" "por hacer"}}</label>
+</div>
+<button type="button" {{action 'cambiar'}}>{{if item.hecho "Marcar como sin hacer" "!Lo he hecho"}}</button>
+
+{{yield}}
