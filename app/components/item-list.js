@@ -36,7 +36,6 @@ export default Component.extend({
   actions:{
     cambiar(){
       this._super(...arguments);
-      //const lista = this.modelFor('index').lista;
       const item = this.get('item');
       if (item.hecho) {
         set(item, 'hecho', false);
